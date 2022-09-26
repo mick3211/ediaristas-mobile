@@ -14,9 +14,15 @@ import React from 'react';
 import { View } from 'react-native';
 import Background from '@assets/img/background/cleaning.jpg';
 import { useTheme } from '@emotion/react';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from 'ui/router/Router';
+
+type NavigationProp = StackNavigationProp<RootStackParamList, 'Index'>;
 
 export const Index: React.FC = () => {
     const { colors } = useTheme();
+    const navigation = useNavigation<NavigationProp>();
 
     return (
         <View style={{ flex: 1 }}>
@@ -33,7 +39,9 @@ export const Index: React.FC = () => {
                         <RoundedButton
                             mode="contained"
                             fullWidth
-                            onPress={() => {}}
+                            onPress={() =>
+                                navigation.navigate('EncontrarDiarista')
+                            }
                         >
                             Encontrar Diarista
                         </RoundedButton>
