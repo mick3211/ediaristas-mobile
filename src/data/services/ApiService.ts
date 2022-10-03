@@ -25,7 +25,7 @@ ApiService.interceptors.response.use(
 );
 
 async function handleTokenRefresh(err: { config: AxiosRequestConfig }) {
-    const tokenRefresh = LocalStorage.get<string>('token_refresh', '');
+    const tokenRefresh = await LocalStorage.get<string>('token_refresh', '');
     if (tokenRefresh) {
         LocalStorage.clear('token');
         LocalStorage.clear('token_refresh');

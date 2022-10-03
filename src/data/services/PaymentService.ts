@@ -1,6 +1,6 @@
 import { TextColor } from 'data/@types/DiariaInterface';
 import { PagamentoStatus } from 'data/@types/PagamentoInterface';
-import pagarme, { CardInterface, CardValidateInterface } from 'pagarme';
+import pagarme, { CardInterface, CardValidateInterface } from 'pagarme/browser';
 
 const encryption_key = process.env.NEXT_PUBLIC_PAGARME_ENCRYPTION_KEY;
 

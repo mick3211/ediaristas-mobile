@@ -12,7 +12,9 @@ const initialValue: ExternalServiceReducerInterface = {
 
 export const ExternalServicesContext = createContext(initialValue);
 
-export const ExternalServicesProvider: React.FC = ({ children }) => {
+export const ExternalServicesProvider: React.FC<{
+    children: React.ReactNode;
+}> = ({ children }) => {
     const reducer = useExternalServicesReducer();
 
     return (

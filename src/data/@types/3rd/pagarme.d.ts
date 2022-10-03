@@ -1,4 +1,4 @@
-declare module 'pagarme' {
+declare module 'pagarme/browser' {
     export default Pagarme;
 
     export interface CardInterface {

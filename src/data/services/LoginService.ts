@@ -32,7 +32,7 @@ export const LoginService = {
     },
 
     async getUser(): Promise<UserInterface | undefined> {
-        const token = LocalStorage.get('token', '');
+        const token = await LocalStorage.get('token', '');
 
         if (token) {
             ApiService.defaults.headers.common['Authorization'] =

@@ -12,7 +12,9 @@ const initialValue: UserReducerInterface = {
 
 export const UserContext = createContext(initialValue);
 
-export const UserProvider: React.FC = ({ children }) => {
+export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
+    children,
+}) => {
     const reducer = useUserReducer();
 
     return (
