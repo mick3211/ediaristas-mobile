@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native';
 import { PageTitle } from 'ui/components/data-display/PageTitle/PageTitle';
 import { UserInformation } from 'ui/components/data-display/UserInformation/UserInformation';
 import { Button } from 'ui/components/inputs/Button/Button';
-import { TextInputMaks } from 'ui/components/inputs/TextInputMask/TextInputMask';
+import { TextInputMask } from 'ui/components/inputs/TextInputMask/TextInputMask';
 import {
     ErrorText,
     FormContainer,
@@ -49,7 +49,7 @@ export const VerificarProfissionais: React.FC<VerificarProfissionaisProps> = ({
                 subtitle="Preencha o seu endereço e veja os profissionais da sua localidade"
             />
             <FormContainer>
-                <TextInputMaks
+                <TextInputMask
                     label="Digite seu CEP"
                     mask="99.999-999"
                     keyboardType="number-pad"

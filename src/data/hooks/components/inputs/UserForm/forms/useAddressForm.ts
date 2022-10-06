@@ -1,3 +1,4 @@
+import { EnderecoInterface } from 'data/@types/EnderecoInterface';
 import { UserContext } from 'data/contexts/UserContext';
 import { useCities } from 'data/hooks/useCities';
 import { LocationService } from 'data/services/LocationService';
@@ -12,7 +13,7 @@ export const useAddressForm = () => {
         watch,
         setValue,
         formState: { errors },
-    } = useFormContext();
+    } = useFormContext<{ endereco: EnderecoInterface }>();
     const [addressState, addressCity, addressCep] = watch([
         'endereco.estado',
         'endereco.cidade',
@@ -44,14 +45,17 @@ export const useAddressForm = () => {
     useEffect(() => {
         const cep = (addressCep || '').replaceAll('_', '');
 
-        if (cep.length === 9) {
+        if (cep?.length === 9) {
             LocationService.cep(cep).then((newAddress) => {
                 if (newAddress) {
                     newAddress.uf && setValue('endereco.estado', newAddress.uf);
                     newAddress.localidade &&
                         setValue('endereco.cidade', newAddress.localidade);
                     newAddress.ibge &&
-                        setValue('endereco.codigo_ibge', newAddress.ibge);
+                        setValue(
+                            'endereco.codigo_ibge',
+                            Number(newAddress.ibge)
+                        );
                     newAddress.bairro &&
                         setValue('endereco.bairro', newAddress.bairro);
                     newAddress.logradouro &&

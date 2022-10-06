@@ -28,11 +28,7 @@ export function useContratacao() {
     const [step, setStep] = useState(1);
     const [hasLogin, setHasLogin] = useState(false);
     const [loginError, setLoginError] = useState('');
-    const breadCrumbItems = [
-        'Detalhes da diária',
-        'Identificação',
-        'Pagamento',
-    ];
+    const breadCrumbItems = ['Detalhes', 'Identificação', 'Pagamento'];
     const { userState, userDispacth } = useContext(UserContext);
     const { externalServicesState } = useContext(ExternalServicesContext);
     const servicos = useApiHateoas<ServicoInterface[]>(

@@ -5,7 +5,7 @@ export interface TextInputMaskProps extends TextInputProps {
     mask: string;
 }
 
-export const TextInputMaks: React.FC<TextInputMaskProps> = ({
+export const TextInputMask: React.FC<TextInputMaskProps> = ({
     mask,
     onChangeText,
     value,

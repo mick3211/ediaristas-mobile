@@ -1,7 +1,7 @@
 import styled from '@emotion/native';
 import { Text } from 'react-native';
 
-export const BreadCrumbConteiner = styled.View`
+export const BreadCrumbContainer = styled.View`
     flex-direction: row;
     justify-content: center;
     padding: 0;

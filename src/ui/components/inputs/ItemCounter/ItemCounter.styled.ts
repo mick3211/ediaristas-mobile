@@ -13,7 +13,7 @@ export const ItemCounterTextContainer = styled.Text`
     background-color: ${({ theme }) => theme.colors.grey[100]};
     color: ${({ theme }) => theme.colors.text};
     text-align: center;
-    padding: ${({ theme }) => theme.spacing() + ' ' + theme.spacing(4)};
+    padding: ${({ theme }) => theme.spacing()};
     margin: ${({ theme }) => theme.spacing(2) + ' ' + theme.spacing(-3)};
 `;
 

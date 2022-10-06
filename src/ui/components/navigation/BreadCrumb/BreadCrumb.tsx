@@ -1,4 +1,4 @@
-import { BreadCrumbConteiner, BreadCrumbItem } from './BreadCrumb.styled';
+import { BreadCrumbContainer, BreadCrumbItem } from './BreadCrumb.styled';
 
 interface BreadCrumbProps {
     selected: string;
@@ -7,12 +7,12 @@ interface BreadCrumbProps {
 
 export const BreadCrumb: React.FC<BreadCrumbProps> = ({ items, selected }) => {
     return (
-        <BreadCrumbConteiner>
+        <BreadCrumbContainer>
             {items.map((item, index) => (
                 <BreadCrumbItem key={index} isSelected={item === selected}>
                     {item}
                 </BreadCrumbItem>
             ))}
-        </BreadCrumbConteiner>
+        </BreadCrumbContainer>
     );
 };
