@@ -12,6 +12,9 @@ export function useMinhasDiarias() {
     );
     const [diariaAvaliar, setDiariaAvaliar] = useState({} as DiariaInterface);
     const [diariaCancelar, setDiariaCancelar] = useState({} as DiariaInterface);
+    const [diariaVisualizar, setDiariaVisualizar] = useState(
+        {} as DiariaInterface
+    );
     const [filtro, setFiltro] = useState('pendentes');
     const isMobile = useIsMobile();
     const { diariaState } = useContext(DiariaContext);
@@ -139,5 +142,7 @@ export function useMinhasDiarias() {
         cancelarDiaria,
         filtro,
         alterarFiltro,
+        diariaVisualizar,
+        setDiariaVisualizar,
     };
 }

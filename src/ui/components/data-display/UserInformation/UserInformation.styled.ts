@@ -8,7 +8,7 @@ export const UserInformationContainer = styled(View, {
 })<{ darker: boolean }>`
     flex-direction: row;
     align-items: center;
-    padding: ${({ theme }) => theme.spacing(2)};
+    // padding: ${({ theme }) => theme.spacing(2)};
     background-color: ${({ theme, darker }) =>
         theme.colors.grey[darker ? 100 : 50]};
 `;

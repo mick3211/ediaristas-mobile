@@ -48,14 +48,19 @@ export const Index: React.FC = () => {
                         <RoundedButton
                             mode="contained"
                             fullWidth
-                            onPress={() => {}}
+                            onPress={() =>
+                                navigation.navigate('CadastroDirista')
+                            }
                         >
                             Ser Diarista
                         </RoundedButton>
                     </RegisterButtonsContainer>
                 </RegisterContainer>
                 <LoginContainer>
-                    <RoundedLoginButton fullWidth onPress={() => {}}>
+                    <RoundedLoginButton
+                        fullWidth
+                        onPress={() => navigation.navigate('Login')}
+                    >
                         Já possuo conta
                     </RoundedLoginButton>
                 </LoginContainer>

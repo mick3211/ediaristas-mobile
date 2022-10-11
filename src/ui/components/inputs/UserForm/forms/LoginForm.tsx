@@ -19,6 +19,7 @@ export const LoginForm: React.FC = () => {
                 control={control}
                 render={({ field }) => (
                     <TextInput
+                        autoCapitalize="none"
                         label={'Email'}
                         keyboardType="email-address"
                         value={field.value}

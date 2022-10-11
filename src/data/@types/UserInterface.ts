@@ -34,3 +34,9 @@ export enum UserType {
     Cliente = 1,
     Diarista = 2,
 }
+
+export enum ForceUserState {
+    none,
+    authenticated,
+    unauthenticated,
+}

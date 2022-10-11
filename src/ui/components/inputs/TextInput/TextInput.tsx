@@ -15,7 +15,7 @@ const TextInputElement: React.FC<TextInputProps> = ({
         <View>
             <TextInputStyled {...props} />
             {helperText ? (
-                <HelperTextStyled type="error">asdsadsad</HelperTextStyled>
+                <HelperTextStyled type="error">{helperText}</HelperTextStyled>
             ) : null}
         </View>
     );

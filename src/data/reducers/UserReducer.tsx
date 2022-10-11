@@ -2,7 +2,11 @@ import {
     CidadeInterface,
     EnderecoInterface,
 } from 'data/@types/EnderecoInterface';
-import { UserInterface, UserType } from 'data/@types/UserInterface';
+import {
+    ForceUserState,
+    UserInterface,
+    UserType,
+} from 'data/@types/UserInterface';
 import { ApiServiceHateoas } from 'data/services/ApiService';
 import { LoginService } from 'data/services/LoginService';
 import produce from 'immer';
@@ -31,6 +35,7 @@ export const initialState = {
     } as EnderecoInterface,
     adressList: [] as CidadeInterface[],
     isLogging: true,
+    forceUserState: ForceUserState.none,
 };
 
 export type InitialStateType = typeof initialState;
@@ -38,7 +43,8 @@ type userAction =
     | 'SET_USER'
     | 'SET_LOGGING'
     | 'SET_ADRESS_LIST'
-    | 'SET_USER_ADDRESS';
+    | 'SET_USER_ADDRESS'
+    | 'SET_FORCE_USER_STATE';
 export type UserActionType = {
     type: userAction;
     payload?: unknown;
@@ -66,6 +72,9 @@ const reducer = (
                 break;
             case 'SET_LOGGING':
                 draftState.isLogging = action.payload as boolean;
+                break;
+            case 'SET_FORCE_USER_STATE':
+                draftState.forceUserState = action.payload as ForceUserState;
                 break;
         }
     });

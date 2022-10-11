@@ -3,7 +3,7 @@ import {
     initialState,
     UseDiariaReducer,
 } from 'data/reducers/DiariasReducer';
-import { createContext } from 'react';
+import React, { createContext } from 'react';
 
 const initialValue: DiariaReducerInterface = {
     diariaState: initialState,
@@ -12,7 +12,9 @@ const initialValue: DiariaReducerInterface = {
 
 export const DiariaContext = createContext(initialValue);
 
-export const DiariaProvider: React.FC = ({ children }) => {
+export const DiariaProvider: React.FC<{ children: React.ReactNode }> = ({
+    children,
+}) => {
     const reducer = UseDiariaReducer();
 
     return (

@@ -20,8 +20,10 @@ export const DataList: React.FC<DataListProps> = ({
     return (
         <List.Section>
             <AccordionStyled title={header}>
-                <AccordionDetails>{body}</AccordionDetails>
-                {actions && <AccordionActions></AccordionActions>}
+                <AccordionDetails>
+                    {body}
+                    {actions && <AccordionActions>{actions}</AccordionActions>}
+                </AccordionDetails>
             </AccordionStyled>
         </List.Section>
     );
