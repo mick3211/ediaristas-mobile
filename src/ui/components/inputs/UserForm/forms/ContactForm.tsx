@@ -15,7 +15,7 @@ export const ContactForm: React.FC = () => {
         <View>
             <Controller
                 name="usuario.email"
-                defaultValue={''}
+                defaultValue={user.email}
                 control={control}
                 render={({ field }) => (
                     <TextInput
